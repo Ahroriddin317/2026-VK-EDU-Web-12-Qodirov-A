@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -7,23 +8,23 @@
     <title>AskMe — Вопросы и ответы</title>
     <link rel="icon" href="static/img/favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'questions/css/bootstrap.min.css' %}">
 </head>
 <body class="d-flex flex-column min-vh-100 bg-light">
 
     <header class="navbar navbar-expand-lg navbar-dark bg-dark mb-4 shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">AskMe</a>
+            <a class="navbar-brand fw-bold" href="/">AskMe</a>
             
             <form class="d-flex flex-grow-1 mx-lg-5">
                 <input class="form-control me-2" type="search" placeholder="Поиск по вопросам...">
             </form>
 
             <div class="d-flex align-items-center">
-                <a href="ask.html" class="btn btn-primary me-3">Ask!</a>
+                <a href="ask" class="btn btn-primary me-3">Ask!</a>
                 
                 <div class="d-flex align-items-center text-white text-decoration-none">
-                    <img src="static/img/avatar.jpg" class="rounded-circle me-2" width="40" height="40" alt="Avatar">
+                    <img src={% static 'questions/img/avatar.jpg' %} class="rounded-circle me-2" width="40" height="40" alt="Avatar">
                     <div class="dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Ivanov</a>
                         <ul class="dropdown-menu dropdown-menu-end">
@@ -41,6 +42,8 @@
         <div class="row">
             
             <main class="col-lg-9">
+                {% block content %}
+                {% endblock %}
                 </main>
 
             <aside class="col-lg-3">
@@ -70,6 +73,6 @@
         </div>
     </footer>
 
-    <script src="static/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'questions/js/bootstrap.bundle.min.js' %}"></script>
 </body>
 </html>
