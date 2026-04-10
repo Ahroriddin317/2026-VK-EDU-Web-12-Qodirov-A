@@ -1,0 +1,25 @@
+{% load static %}
+
+<div class="card mb-3 shadow-sm">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-2 text-center">
+        <img src="{% static 'questions/img/avatar.jpg' %}" class="img-thumbnail mb-2" width="80" />
+        <div class="border rounded d-flex flex-column overflow-hidden">
+          <button class="btn btn-sm btn-light border-0">&plus;</button>
+          <span class="py-1 fw-bold">42</span>
+          <button class="btn btn-sm btn-light border-0">&minus;</button>
+        </div>
+      </div>
+      <div class="col-10">
+        <h4 class="card-title"><a href="question" class="text-decoration-none">{{ question.title }}</a></h4>
+        <p class="card-text">{{ question.text }}</p>
+        <div class="d-flex gap-2 align-items-center">
+          <a href="question" class="small">Answers (5)</a>
+          <span class="badge bg-info text-dark">Python</span>
+          <span class="badge bg-info text-dark">Web</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
