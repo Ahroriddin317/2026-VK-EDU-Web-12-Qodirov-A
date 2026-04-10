@@ -1,0 +1,39 @@
+{% extends 'questions/base.html' %}
+{% load static %}
+{% block content %}
+  <main class="col-lg-9">
+    <h2 class="mb-4">Registration</h2>
+
+    <div class="alert alert-danger">Please correct the errors below.</div>
+
+    <form class="bg-white p-4 rounded shadow-sm">
+      <div class="mb-3">
+        <label class="form-label">Login</label>
+        <input type="text" class="form-control" placeholder="ivanov_2026" />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email address</label>
+        <input type="email" class="form-control is-invalid" />
+        <div class="invalid-feedback">This email is already taken.</div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Nickname</label>
+        <input type="text" class="form-control" placeholder="Dr. Pepper" />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" />
+        <div class="form-text">At least 8 characters long.</div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Repeat Password</label>
+        <input type="password" class="form-control" />
+      </div>
+      <div class="mb-4">
+        <label class="form-label">Upload Avatar</label>
+        <input type="file" class="form-control" />
+      </div>
+      <button type="submit" class="btn btn-primary px-5">Register!</button>
+    </form>
+  </main>
+{% endblock %}

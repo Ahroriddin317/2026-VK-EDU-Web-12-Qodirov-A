@@ -1,0 +1,19 @@
+{% extends 'questions/base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <main class="col-lg-9">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2>Hot Questions</h2>
+          <a href="/" class="text-decoration-none">New Questions</a>
+        </div>
+        {% for question in questions %}
+          {% include "questions/questionCard.html" %}
+        {% endfor %}
+        {% include "questions/pagination.html" %}
+      </main>
+    </div>
+  </div>
+{% endblock %}
